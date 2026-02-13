@@ -1,0 +1,97 @@
+/* ===== 全屏遮罩 ===== */
+.agreement-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== 弹窗主体 ===== */
+.agreement-box {
+  width: 92%;
+  max-width: 720px;
+  max-height: 85vh;
+
+  background: #fff;
+  color: #333;
+
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden; /* 只裁切，不滚动 */
+}
+
+/* ===== 标题 ===== */
+.agreement-box h2 {
+  margin: 0;
+  padding: 16px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== 协议正文（唯一允许滚动的地方） ===== */
+.agreement-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== 操作区 ===== */
+.agreement-actions {
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+/* checkbox 行 */
+.agreement-actions label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* 按钮区 */
+.agreement-actions .btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.agreement-actions button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+#agree-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#agree-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+#reject-btn {
+  background: #f44336;
+  color: #fff;
+}
