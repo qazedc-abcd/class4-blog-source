@@ -110,7 +110,6 @@ deploy:
 skip_render:
   agreement/*.md
 
-# webui要加的东西
 skip_render:
   - admin/**
 
