@@ -1,7 +1,10 @@
 backend:
+backend:
   name: github
-  repo: qazedc-abcd/class4-blog-source  # 你的仓库
+  repo: qazedc-abcd/class4-blog-source
   branch: main
+  base_url: https://oauth.zichenccc.cn
+  auth_endpoint: /auth
 
 media_folder: "source/images/uploads"
 public_folder: "/images/uploads"
