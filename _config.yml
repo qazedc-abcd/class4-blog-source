@@ -109,5 +109,4 @@ deploy:
 # 免责声明跳过这俩地方渲染
 skip_render:
   - agreement/*.md
-  - admin/**
 
