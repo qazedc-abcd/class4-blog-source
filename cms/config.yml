@@ -1,5 +1,4 @@
 backend:
-backend:
   name: github
   repo: qazedc-abcd/class4-blog-source
   branch: main
