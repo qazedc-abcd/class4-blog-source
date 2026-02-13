@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: qazedc-abcd/class4-blog-source  # 你的仓库
+  branch: main
+
+media_folder: "source/images/uploads"
+public_folder: "/images/uploads"
+
+locale: 'zh_Hans'
+
+collections:
+  - name: "posts"
+    label: "博客文章"
+    folder: "source/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
+      - {label: "分类", name: "categories", widget: "list", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "封面图", name: "cover", widget: "image", required: false}
+      - {label: "内容", name: "body", widget: "markdown"}
