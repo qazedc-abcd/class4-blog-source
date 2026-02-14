@@ -2,6 +2,7 @@ backend:
   name: github
   repo: qazedc-abcd/class4-blog-source
   branch: main
+  token: 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
   base_url: https://oauth.zichenccc.cn
   auth_endpoint: /auth
 
