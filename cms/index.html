@@ -1,4 +1,7 @@
-<!doctype html>
+---
+layout: false
+---
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -7,6 +10,48 @@
   <title>博客管理后台</title>
 </head>
 <body>
+  <script>
+    // 调试信息
+    console.log("Current hash:", window.location.hash);
+    console.log("Current pathname:", window.location.pathname);
+    
+    // 检测 token（支持 #/access_token=... 格式）
+    const hash = window.location.hash;
+    if (hash.includes('access_token')) {
+      // 提取 token
+      const match = hash.match(/access_token=([^&]+)/);
+      if (match && match[1]) {
+        const token = match[1];
+        console.log("Found token:", token.substring(0, 10) + "...");
+        
+        // 存储到 Decap CMS 使用的 localStorage key
+        const userData = {
+          token: token,
+          backendName: 'github',
+          tokenType: 'bearer'
+        };
+        
+        localStorage.setItem('decap-cms-user', JSON.stringify(userData));
+        localStorage.setItem('netlify-cms-user', JSON.stringify(userData));
+        
+        console.log("Token stored to localStorage");
+        
+        // 清理 URL，去掉 token，保留 #/ 让 Decap CMS 正常路由
+        window.history.replaceState({}, document.title, window.location.pathname + '#/');
+        
+        console.log("URL cleaned, reloading...");
+        // 刷新页面让 Decap CMS 读取 token
+        window.location.reload();
+      }
+    }
+  </script>
+  
   <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+  
+  <script>
+    // Decap CMS 加载后的调试
+    console.log("Decap CMS loaded");
+    console.log("Stored user:", localStorage.getItem('decap-cms-user'));
+  </script>
 </body>
 </html>
