@@ -19,10 +19,11 @@ permalink: /免责声明/
 1. 本站以公益形式搭建，网站所有者不会以任何名义强制收费。  
 2. 任何要求您“必须付款”的行为均属诈骗；警惕网络诈骗，请[点击此处](https://sj.qq.com/appdetail/com.hicorenational.antifraud)下载国家反诈中心 App。  
 3. 欢迎自愿赞助，以下为赞助名单：  
-   后续更新。
+   暂无（截止2026年2月16日15:33:23）
 
 4. 项目开支明细公示：  
-   后续更新。  
+   云服务费用公示
+   ![云服务费用公示](https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/cloud-service-expence-2026-02-16-15-26-27.png)
 
 ## 三、分享责任
 
