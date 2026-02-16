@@ -1,0 +1,23 @@
+/* 定义 HarmonyOS Sans SC Medium 字重 */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+}
+
+/* 定义 HarmonyOS Sans SC Bold 字重 */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/HarmonyOS_Sans_SC_Bold.ttf') format('truetype');
+}
+
+/* 全局字体设置 */
+body {
+  font-family: 'HarmonyOS Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+  font-weight: 500;
+}
