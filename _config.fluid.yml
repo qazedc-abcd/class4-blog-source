@@ -30,7 +30,7 @@ tab_title_separator: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
-force_https: false
+force_https: true
 
 # 代码块的增强配置
 # Enhancements to code blocks
@@ -447,30 +447,41 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
-  content: '
-    <a href="https://hexo.io " target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+  content: |
+    使用的框架： <a href="https://hexo.io " target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid " target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    使用的主题： <a href="https://github.com/fluid-dev/hexo-theme-fluid " target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     <i class="iconfont icon-love"></i>
+    <br>
     <a href="/用户协议/ " target="_blank" rel="nofollow noopener">
       <span>用户协议</span>
+    </a>
     <a href="/免责声明/" target="_blank" rel="nofollow noopener">
       <span>免责声明</span>
     </a>
+    <br>
+    <p>
+      © <span id="currentYear">2025</span> 2026届4班纪念站<br>
+      内容采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议进行共享。
+    </p>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentYearSpan = document.getElementById('currentYear');
+        const currentYear = new Date().getFullYear();
+        const startYear = 2025;
+        
+        if (currentYear > startYear) {
+          currentYearSpan.textContent = `${startYear}-${currentYear}`;
+        }
+      });
+    </script>
+    
     <div style="font-size: 0.85rem">
       <span id="timeDate">载入天数...</span>
       <span id="times">载入时分秒...</span>
       <script src="/js/duration.js"></script>
     </div>
-
-<style>
-.privacy-policy {
-  color: red;
-  display: block;
-}
-</style>
-
-  '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
