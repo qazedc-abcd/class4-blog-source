@@ -244,7 +244,7 @@ custom_css: /css/fonts.css
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:
-  enable: true
+  enable: false
 
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
   # Follow the "Do Not Track" setting of the visitor's browser
@@ -337,7 +337,7 @@ lazyload:
 
 # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
-iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
+iconfont: at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
 
 
 #---------------------------
@@ -514,7 +514,7 @@ beian:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -586,7 +586,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -950,7 +950,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -961,7 +961,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -990,7 +990,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -1007,7 +1007,7 @@ tag:
 #---------------------------
 about:
   enable: false
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
@@ -1029,7 +1029,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -1040,7 +1040,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -1054,7 +1054,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2023%E5%B9%B4%E5%85%83%E6%97%A6.webp
+  banner_img: https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/%E5%90%88%E7%85%A7-2026%E7%99%BE%E6%97%A5%E8%AA%93%E5%B8%88.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项
