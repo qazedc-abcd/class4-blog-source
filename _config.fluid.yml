@@ -483,6 +483,8 @@ footer:
       <script src="/js/duration.js"></script>
     </div>
 
+    <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2026016149号-1</a>
+
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
 statistics:
@@ -498,7 +500,7 @@ statistics:
 beian:
     enable: true
     # ICP证号
-    icp_text: 鄂ICP备2026016149号
+    icp_text: 鄂ICP备2026016149号-1
     # 公安备案号，不填则只显示ICP
     police_text: 
     # 公安备案的编号，用于URL跳转查询
