@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "my-blog",
+			"path": "."
+		},
+		{
+			"name": "admin",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

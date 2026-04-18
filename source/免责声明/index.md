@@ -23,7 +23,7 @@ permalink: /免责声明/
 
 4. 项目开支明细公示：  
    云服务费用公示
-   ![云服务费用公示](https://photo.zichenccc.cn/%E7%8F%AD%E7%BA%A7blog/cloud-service-expence-2026-02-16-15-26-27.png)
+   ![云服务费用公示](https://drive.zichenccc.cn/raw/%E7%8F%AD%E7%BA%A7blog/cloud-service-expence-2026-02-16-15-26-27.png)
 
 ## 三、分享责任
 
