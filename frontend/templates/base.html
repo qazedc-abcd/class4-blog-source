@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#534AB7">
+  <meta name="format-detection" content="telephone=no">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="/static/css/fonts.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-title">{{ site.title }}</span>
+        {% if site.subtitle %}<span class="brand-sub">{{ site.subtitle }}</span>{% endif %}
+      </a>
+      <button class="nav-toggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          {% for item in site.nav %}
+            <li><a href="{{ item.link }}" {% if section and item.link.rstrip('/') == '/' and section=='home' %}class="active"{% elif section and item.link.strip('/') == section %}class="active"{% endif %}>{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      {% if site.footer_html %}<div class="footer-extra">{{ site.footer_html | safe }}</div>{% endif %}
+      <p class="footer-meta">
+        © <span id="footYear">{{ site.start_year }}</span>
+        {{ site.author }}
+        {% if site.license %}<br>内容采用 <a href="{{ site.license_url }}" target="_blank" rel="noopener">{{ site.license }}</a> 许可协议进行共享{% endif %}
+      </p>
+      {% if site.email %}
+        <p class="footer-contact">联系我们：<a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      {% endif %}
+      <div class="footer-beian">
+        {% if site.beian.icp.enable and site.beian.icp.text %}
+          <a href="{{ site.beian.icp.url }}" target="_blank" rel="nofollow noopener">{{ site.beian.icp.text }}</a>
+        {% endif %}
+        {% if site.beian.police.enable and site.beian.police.text %}
+          <a href="{{ site.beian.police.url }}" target="_blank" rel="nofollow noopener" class="beian-police">
+            <img src="/static/img/police.svg" alt="" onerror="this.style.display='none'">
+            <span>{{ site.beian.police.text }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </footer>
+
+  <div id="agreement-root" aria-hidden="true"></div>
+
+  <script>
+    window.SITE = {
+      title: {{ site.title | tojson }},
+      twikoo: {{ site.twikoo | tojson }},
+      agreement: {{ site.agreement | tojson }}
+    };
+    window.nowYear = new Date().getFullYear();
+    document.getElementById('footYear').textContent = window.nowYear > {{ site.start_year }} ? '{{ site.start_year }}-' + window.nowYear : '{{ site.start_year }}';
+  </script>
+  <script src="/static/js/main.js" defer></script>
+  {% if site.agreement.enable %}
+    <script src="/static/js/agreement.js" defer></script>
+  {% endif %}
+  {% block foot %}{% endblock %}
+</body>
+</html>

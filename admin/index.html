@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#534AB7">
+  <meta name="robots" content="noindex,nofollow">
+  <title>管理后台 - ClassMemorial</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="stylesheet" href="/static/css/fonts.css">
+  <link rel="stylesheet" href="/admin/style.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="tpl-login">
+    <div class="login-wrap">
+      <form class="login-card" id="loginForm">
+        <h1>管理后台</h1>
+        <p class="login-sub">ClassMemorial</p>
+        <input type="password" name="password" placeholder="管理密码" autocomplete="current-password" required>
+        <button type="submit">登录</button>
+        <p class="login-err" id="loginErr"></p>
+      </form>
+    </div>
+  </template>
+
+  <template id="tpl-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">ClassMemorial</div>
+      <nav>
+        <a href="#/dashboard" data-route="dashboard">仪表盘</a>
+        <a href="#/posts" data-route="posts">文章</a>
+        <a href="#/pages" data-route="pages">单页</a>
+        <a href="#/gallery" data-route="gallery">图库</a>
+        <a href="#/settings" data-route="settings">站点设置</a>
+        <a href="#/sync" data-route="sync">同步</a>
+        <a href="/" target="_blank" class="ext">查看站点 ↗</a>
+        <a href="#/logout" class="logout">退出登录</a>
+      </nav>
+    </aside>
+    <main class="content" id="view"></main>
+    <button class="menu-fab" id="menuFab" aria-label="菜单">≡</button>
+  </template>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="/admin/app.js"></script>
+</body>
+</html>

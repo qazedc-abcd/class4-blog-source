@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="archive-page">
+  <h1 class="page-title">归档</h1>
+  {% set ns = namespace(cur='') %}
+  {% for p in posts %}
+    {% set dstr = p.date_str if p.date_str else (p.date.strftime('%Y-%m-%d') if p.date is iterable and false else p.date | datefmt) %}
+    {% set ym = dstr[:7] %}
+    {% if ym != ns.cur %}
+      {% set ns.cur = ym %}
+      <h2 class="archive-month">{{ ym }}</h2>
+    {% endif %}
+    <a class="archive-row" href="/p/{{ p.slug }}/">
+      <span class="ar-date">{{ dstr }}</span>
+      <span class="ar-title">{{ p.title }}</span>
+      {% if p.categories_list %}<span class="ar-cats">{% for c in p.categories_list %}<i>{{ c }}</i>{% endfor %}</span>{% endif %}
+    </a>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+# docker-compose for ClassMemorial
+# 资源占用：backend≈150MB + nginx≈10MB ≈ 200MB RAM，适配 2H2G 与 astrbot 共存
+services:
+  backend:
+    build: ./backend
+    container_name: classmemorial-backend
+    env_file: .env
+    volumes:
+      - content:/app/content        # git 仓库：posts/pages/gallery/site.yml（备份到 GitHub）
+      - site:/app/data/site         # 生成的静态站（与 nginx 共享）
+      - dbdata:/app/data            # data.db 等（预留）
+    restart: unless-stopped
+    mem_limit: 256m
+    memswap_limit: 384m
+    networks: [cmnet]
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    container_name: classmemorial-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - site:/usr/share/nginx/html/site:ro
+    depends_on:
+      - backend
+    restart: unless-stopped
+    mem_limit: 64m
+    networks: [cmnet]
+
+volumes:
+  content:
+  site:
+  dbdata:
+
+networks:
+  cmnet:

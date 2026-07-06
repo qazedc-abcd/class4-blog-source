@@ -1,8 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# runtime data
+data/
+*.db
+*.db-journal
+.site/
+
+# env
+.env
+
+# os
 .DS_Store
 Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-_multiconfig.yml
+
+# editor
+.vscode/
+.idea/

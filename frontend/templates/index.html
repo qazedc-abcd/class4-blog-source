@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% if hero and hero.enable and hero.image %}
+<style>
+  .hero{background-image:url('{{ hero.image }}');}
+  .hero::after{background:rgba(0,0,0,{{ hero.mask_alpha | default(0.35) }});}
+</style>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if hero and hero.enable and hero.image %}
+<section class="hero" style="--hero-h:{{ hero.height | default(70) }}vh;">
+  <div class="hero-inner">
+    {% if hero.title %}<h1 class="hero-title">{{ hero.title }}</h1>{% endif %}
+    {% if hero.subtitle %}<p class="hero-sub">{{ hero.subtitle }}</p>{% endif %}
+    <a class="hero-scroll" href="#posts" aria-label="向下浏览">⌄</a>
+  </div>
+</section>
+{% endif %}
+
+<section class="post-list" id="posts">
+  {% if posts %}
+    {% for p in posts %}
+      <article class="post-card{% if p.sticky %} is-sticky{% endif %}">
+        {% if p.cover %}<a class="post-cover" href="/p/{{ p.slug }}/"><img src="{{ p.cover }}" alt="{{ p.title }}" loading="lazy"></a>{% endif %}
+        <div class="post-card-body">
+          <h2 class="post-card-title">
+            <a href="/p/{{ p.slug }}/">{{ p.title }}</a>
+            {% if p.sticky %}<span class="pin">置顶</span>{% endif %}
+          </h2>
+          <div class="post-meta">
+            <time datetime="{{ p.date | rfc3339 }}">{{ p.date_str }}</time>
+            {% for c in p.categories_list %}<a class="cat" href="/archives/#cat-{{ c }}">{{ c }}</a>{% endfor %}
+          </div>
+          <p class="post-excerpt">{{ p.excerpt }}</p>
+          <a class="read-more" href="/p/{{ p.slug }}/">阅读全文</a>
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <div class="empty">还没有内容，去后台写第一篇吧。</div>
+  {% endif %}
+</section>
+{% endblock %}

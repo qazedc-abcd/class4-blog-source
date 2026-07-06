@@ -1,0 +1,36 @@
+/* HarmonyOS Sans 字体引入
+   - Latin/数字：HarmonyOS Sans（cdnfonts，文件小，先加载）
+   - 中文汉字：HarmonyOS Sans SC（jsDelivr，含简体字形）
+   浏览器先用 Latin 字体渲染数字/英文，中文回退到 SC；font-display:swap 避免阻塞。 */
+
+/* ---- Latin：Medium / Bold（源站同款 CDN） ---- */
+@font-face {
+  font-family: 'HarmonyOS Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.cdnfonts.com/s/107783/HarmonyOS_Sans_Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.cdnfonts.com/s/107783/HarmonyOS_Sans_Bold.woff') format('woff');
+}
+
+/* ---- Simplified Chinese：Medium / Bold（jsDelivr 托管） ---- */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/IKKI2000/harmonyos-fonts/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/IKKI2000/harmonyos-fonts/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.woff2') format('woff2');
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="post-detail">
+  <header class="post-header">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ post.date | rfc3339 }}">{{ post.date | datetimefmt }}</time>
+      {% for c in (post.categories_list or (post.categories if post.categories is iterable and post.categories is not string else [post.categories] if post.categories else [])) %}
+        {% if c %}<a class="cat" href="/archives/#cat-{{ c }}">{{ c }}</a>{% endif %}
+      {% endfor %}
+    </div>
+  </header>
+  <div class="post-content markdown-body">
+    {{ content | safe }}
+  </div>
+  <p class="post-license">本文采用 <a href="{{ site.license_url }}" target="_blank" rel="noopener">{{ site.license }}</a> 许可协议共享。</p>
+</article>
+
+{% if site.twikoo.enable and site.twikoo.env_id %}
+<section class="comments" id="comments">
+  <div id="twikoo"></div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block foot %}
+{% if site.twikoo.enable and site.twikoo.env_id %}
+  <script src="{{ site.twikoo.cdn }}"></script>
+  <script src="/static/js/twikoo-init.js" defer></script>
+{% endif %}
+{% endblock %}

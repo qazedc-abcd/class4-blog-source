@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="gallery-page">
+  <h1 class="page-title">{{ site.gallery.title | default("班级图库") }}</h1>
+  <p class="page-sub">那些被快门留下的瞬间。</p>
+
+  {% if groups %}
+  <div class="gallery-tabs" id="galleryTabs">
+    <button class="tab active" data-group="全部">全部</button>
+    {% for g in groups %}<button class="tab" data-group="{{ g }}">{{ g }}</button>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if photos %}
+  <div class="gallery-grid" id="galleryGrid">
+    {% for ph in photos %}
+    <figure class="gallery-item" data-group="{{ ph.group | default('未分组') }}" data-src="{{ ph.url }}">
+      <img src="{{ ph.thumb }}" alt="{{ ph.title }}" loading="lazy" decoding="async">
+      {% if ph.title or ph.desc %}
+      <figcaption>
+        {% if ph.title %}<span class="gi-title">{{ ph.title }}</span>{% endif %}
+        {% if ph.desc %}<span class="gi-desc">{{ ph.desc }}</span>{% endif %}
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% else %}
+    <div class="empty">图库还是空的，去后台上传第一张照片吧。</div>
+  {% endif %}
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="关闭">×</button>
+  <button class="lb-prev" aria-label="上一张">‹</button>
+  <img class="lb-img" src="" alt="">
+  <button class="lb-next" aria-label="下一张">›</button>
+  <div class="lb-caption"></div>
+</div>
+{% endblock %}
